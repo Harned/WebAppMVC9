@@ -12,27 +12,26 @@ import org.springframework.web.bind.annotation.*;
 public class PeopleController {
 
     private final PersonDAO personDAO;
+
     @Autowired
     public PeopleController(PersonDAO personDAO) {
         this.personDAO = personDAO;
     }
 
     @GetMapping()
-    public String index(Model model){
-        //Получение всех людей из DAO и передадим на отображение в предствление
+    public String index(Model model) {
         model.addAttribute("people", personDAO.index());
         return "people/index";
     }
+
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
-        //Получим одного человека по id из DAO и передадим на отображение в представление
         model.addAttribute("person", personDAO.show(id));
         return "people/show";
     }
 
     @GetMapping("/new")
-    public String newPerson(Model model) {
-        model.addAttribute("person", new Person());
+    public String newPerson(@ModelAttribute("person") Person person) {
         return "people/new";
     }
 
@@ -59,5 +58,4 @@ public class PeopleController {
         personDAO.delete(id);
         return "redirect:/people";
     }
-
 }
