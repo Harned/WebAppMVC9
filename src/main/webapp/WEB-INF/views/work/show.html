@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show job</title>
+</head>
+<body>
+<p th:text="${job.getPosition() + ', ' + job.getSalary()}">VALUE</p>
+<p th:text="${job.getId()}">VALUE</p>
+
+<a th:href="@{/work/{id}/edit(id=${job.getId()})}">Edit</a>
+
+<br/>
+<br/>
+
+<form th:method="DELETE" th:action="@{/work/{id}(id=${job.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>

@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 public class PeopleController {
 
     private final PersonDAO personDAO;
-
     @Autowired
     public PeopleController(PersonDAO personDAO) {
         this.personDAO = personDAO;
