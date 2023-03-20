@@ -2,19 +2,19 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Job Index</title>
+    <title>Index job</title>
 </head>
 <body>
 
-<div th:each="job : ${work}">
-    <a th:href="@{/work/{id}(id=${job.getId()})}"
+<div th:each="job : ${works}">
+    <a th:href="@{/works/{id}(id=${job.getId()})}"
        th:text="${job.getPosition() + ', ' + job.getSalary()}">user</a>
 </div>
 
 <br/>
 <hr/>
 
-<a href="/work/new">Create new Job</a>
+<a href="/works/new">Create new job</a>
 
 </body>
 </html>
