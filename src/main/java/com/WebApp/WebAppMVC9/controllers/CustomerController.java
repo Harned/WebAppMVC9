@@ -43,13 +43,13 @@ public class CustomerController {
         if (bindingResult.hasErrors())
             return "clients/new";
 
-        CustomerDAO.save(customer);
+        сustomerDAO.save(customer);
         return "redirect:/clients";
     }
 
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
-        model.addAttribute("Customer", CustomerDAO.show(id));
+        model.addAttribute("Customer", сustomerDAO.show(id));
         return "clients/edit";
     }
 

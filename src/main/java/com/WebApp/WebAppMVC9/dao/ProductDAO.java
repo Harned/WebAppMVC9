@@ -1,6 +1,6 @@
 package com.WebApp.WebAppMVC9.dao;
 
-import com.WebApp.WebAppMVC9.models.Job;
+import com.WebApp.WebAppMVC9.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
